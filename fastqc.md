@@ -24,9 +24,9 @@ java -version
 You should see something like:
 
 >java -version
-openjdk version "11.0.2" 2019-01-15
-OpenJDK Runtime Environment AdoptOpenJDK (build 11.0.2+9)
-OpenJDK 64-Bit Server VM AdoptOpenJDK (build 11.0.2+9, mixed mode)
+>openjdk version "11.0.2" 2019-01-15
+>OpenJDK Runtime Environment AdoptOpenJDK (build 11.0.2+9)
+>OpenJDK 64-Bit Server VM AdoptOpenJDK (build 11.0.2+9, mixed mode)
 
 ### On MacOSX
 
