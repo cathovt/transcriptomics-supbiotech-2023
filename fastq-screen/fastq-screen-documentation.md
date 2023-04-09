@@ -27,5 +27,8 @@ Before running FastQ Screen there are a few prerequisites that will need to be i
 ### Configuration
 Modify fastq_screen.conf file to specify the path to aligner (Bowtie / Bowtie 2 / BWA) and add genome databases.
 
+Example of a configuration:
+Used configuration: fastq_screen.conf
+
 _Example of an execution command:_
 > FastQ-Screen-0.15.3/fastq_screen --outdir results --conf FastQ-Screen-0.15.3/fastq_screen.conf --force ../fastq/Bacillus_infection_T0_R1.fq.gz ../fastq/Bacillus_infection_T0_R2.fq.gz .//fastq/Bacillus_infection_T10_R1.fq.gz .//fastq/Bacillus_infection_T10_R2.fq.gz
