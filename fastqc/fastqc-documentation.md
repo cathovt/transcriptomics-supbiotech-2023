@@ -187,3 +187,18 @@ The HTML file which is saved is a self-contained document with all of the graphs
 # Analysis modules
 
 The description of all analysis modules is provided here: https://www.bioinformatics.babraham.ac.uk/projects/fastqc/Help/3%20Analysis%20Modules/
+  
+# Warnings and failures
+
+The most common reason for warnings and failures in this module is a general degradation of quality over the duration of **long runs**. In general sequencing chemistry degrades with increasing read length and for long runs you may find that the general quality of the run falls to a level where a warning or error is triggered.
+
+> If the quality of the library falls to a low level then the most common remedy is to perform **quality trimming** where reads are truncated based on their average quality. For most libraries where this type of degradation has occurred you will often be simultaneously running into the issue of adapter read-through so a combined adapter and quality trimming step is often employed.
+ 
+### GC-content warning
+  
+Warnings in this module usually indicate a problem with the library. Sharp peaks on an otherwise smooth distribution are normally the result of a specific contaminant (for example, adapter dimers), which may well be picked up by the overrepresented sequences module. Broader peaks may represent contamination with a different species.
+  
+### What warning is expected to be raised by RNA-seq library?
+  
+In RNA-Seq libraries sequences from different transcripts will be present at wildly different levels in the starting population. In order to be able to observe lowly expressed transcripts it is therefore common to greatly over-sequence high expressed transcripts, and this will potentially create large set of duplicates. This will result in high overall duplication in this test, and will often produce peaks in the higher duplication bins. This duplication will come from physically connected regions, and an examination of the distribution of duplicates in a specific genomic region will allow the distinction between over-sequencing and general technical duplication, but these distinctions are not possible from raw fastq files.
+
