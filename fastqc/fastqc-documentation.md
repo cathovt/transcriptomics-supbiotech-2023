@@ -64,8 +64,10 @@ part of an analysis pipeline.
 
 ### Running FastQC Interactively
 
-**Windows:** Simply double click on the run_fastqc bat file. 
+**Windows:** Simply double click on the run_fastqc bat file.
+
 **MacOSX:** Double click on the FastQC application icon.
+
 **Linux:**  Run using a wrapper script 'fastqc'.  The wrapper is in the top level of the FastQC installation; to make this file executable:
 
 >chmod 755 fastqc
