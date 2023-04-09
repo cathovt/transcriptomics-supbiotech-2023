@@ -1,4 +1,6 @@
-# What is FastQC
+
+
+# What is FastQC?
 
 Modern high throughput sequencers can generate hundreds of millions of sequences in a single run. Before analysing this sequence to draw biological conclusions it's recommended to always perform simple quality control checks to ensure that the raw data looks decent and there are no problems or biases in the data which may affect how you can usefully use it.
 
@@ -19,13 +21,16 @@ is in your path (most installers will take care of this for you).
 You can check whether java is installed by opening the 'cmd' program on Windows, or
 any shell on Linux and typing:
 
-java -version
+>java -version
 
 You should see something like:
 
 >java -version
+>
 >openjdk version "11.0.2" 2019-01-15
->OpenJDK Runtime Environment AdoptOpenJDK (build 11.0.2+9)
+>
+>OpenJDK Runtime Environment AdoptOpenJDK (build 11.0.2+9
+>
 >OpenJDK 64-Bit Server VM AdoptOpenJDK (build 11.0.2+9, mixed mode)
 
 ### On MacOSX
@@ -63,15 +68,15 @@ part of an analysis pipeline.
 **MacOSX:** Double click on the FastQC application icon.
 **Linux:**  Run using a wrapper script 'fastqc'.  The wrapper is in the top level of the FastQC installation; to make this file executable:
 
-chmod 755 fastqc
+>chmod 755 fastqc
 
 Once you have done that you can run it directly:
 
-./fastqc
+>./fastqc
 
 or place a link in /usr/local/bin to be able to run the program from any location:
 
-sudo ln -s /path/to/FastQC/fastqc /usr/local/bin/fastqc
+>sudo ln -s /path/to/FastQC/fastqc /usr/local/bin/fastqc
 
 
 ### Running FastQC as part of a pipeline
@@ -83,7 +88,7 @@ the program.  You will probably want to use the zipped install file on every pla
 To run non-interactively you simply have to specify a list of files to process
 on the commandline
 
-fastqc somefile.txt someotherfile.txt
+>fastqc somefile.txt someotherfile.txt
 
 You can specify as many files to process in a single run as you like.  If you don't
 specify any files to process the program will try to open the interactive application
@@ -92,14 +97,14 @@ which may result in an error if you're running in a non-graphical environment.
 There are a few extra options you can specify when running non-interactively.  Full
 details of these can be found by running 
 
-fastqc --help
+>fastqc --help
 
 By default, in non-interactive mode FastQC will create an HTML report with embedded
 graphs, but also a zip file containing individual graph files and additional data files
 containing the raw data from which plots were drawn.  The zip file will not be extracted
 by default but you can enable this by adding:
 
---extract
+>--extract
 
 To the launch command.
 
@@ -107,18 +112,18 @@ If you want to save your reports in a folder other than the folder which contain
 your original FastQ files then you can specify an alternative location by setting a
 --outdir value:
 
---outdir=/some/other/dir/
+>--outdir=/some/other/dir/
 
 If you want to run fastqc on a stream of data to be read from standard input then you
 can do this by specifing 'stdin' as the name of the file to be processed and then 
 streaming uncompressed fastq format data to the program.  For example:
 
-zcat *fastq.gz | fastqc stdin
+>zcat *fastq.gz | fastqc stdin
 
 If you want the results from a streamed analysis sent to a file with a name other than
 stdin then you can add a colon and put the file name you want, for example:
 
-zcat *fastq.gz | fastqc stdin:my_results
+>zcat *fastq.gz | fastqc stdin:my_results
 
 would write results to my_result.html and my_results.zip.
 
