@@ -1,3 +1,5 @@
+# Overview of FastQC Results
+
 - Longer forward reads (51bp) than reverse reads (35bp)
 
 **Forward read (51bp):**
