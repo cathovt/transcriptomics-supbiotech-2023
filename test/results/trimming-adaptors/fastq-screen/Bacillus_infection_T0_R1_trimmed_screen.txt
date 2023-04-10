@@ -1,0 +1,12 @@
+#Fastq_screen version: 0.15.3	#Aligner: bowtie2	#Reads in subset: 100000
+Genome	#Reads_processed	#Unmapped	%Unmapped	#One_hit_one_genome	%One_hit_one_genome	#Multiple_hits_one_genome	%Multiple_hits_one_genome	#One_hit_multiple_genomes	%One_hit_multiple_genomes	Multiple_hits_multiple_genomes	%Multiple_hits_multiple_genomes
+YB886	99219	2962	2.99	95624	96.38	331	0.33	302	0.30	0	0.00
+SPP1	99219	99212	99.99	7	0.01	0	0.00	0	0.00	0	0.00
+E_coli	99219	99128	99.90	0	0.00	56	0.06	20	0.02	15	0.02
+PhiX	99219	99219	100.00	0	0.00	0	0.00	0	0.00	0	0.00
+Lambda	99219	99219	100.00	0	0.00	0	0.00	0	0.00	0	0.00
+BaS_rRNA	99219	98935	99.72	0	0.00	2	0.00	0	0.00	282	0.28
+Vectors	99219	99149	99.94	2	0.00	32	0.03	34	0.03	2	0.00
+Adapters	99219	99177	99.96	5	0.01	1	0.00	2	0.00	34	0.03
+
+%Hit_no_genomes: 2.84
