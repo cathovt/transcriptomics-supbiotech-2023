@@ -143,9 +143,78 @@ The values are quite low here as the sequence comes from the subsampled librarie
 
 Here is the PCA plot of our sample:
 
-![PCA plot.png](deseq2-results%2FPCA%20plot.png)
+![PCAplot.png](deseq2-results%2FPCAplot.png)
 
+- **There is more variance between conditions than between replicates:** second component (PC2) demonstrates less variance. 
+This is reassuring, proving that it is possible to see the actual difference between samples, and that the phage infection impacts the bacteria.
 
+-  Second PCA component (PC2) demonstrates the noise between replicates, suggesting that they could not be perfectly reliable.
 
+### MA plot
+
+> **MA** stands for **Mean Average** plot. 
+> X-axis refers to the **mean average count** while y-axis shows the **log fold change** between 2 experiments. 
+> 
+> The MA plot is a quality control: the dots are colored if they are considered as significant with **p-value below a given threshold**. 
+> 
+> The **p-value** depends on the variance between 2 conditions and the one within each condition. Thus, a high p-value (grey dot) can be due to either no variance between 2 conditions, or a high variance within one condition. 
+> 
+> For the perfect replicates, there shouldn’t be any overlap between blue and grey dots.
+
+![time_0_vs_25_MAplot.png](deseq2-results%2Ftime_0_vs_25_MAplot.png)
+
+- As there is no huge overlap between significant and non-significant values, the replicates seem fine for both conditions
+
+- The grey area is larger at low mean of normalized counts due **to higher noise for low signals**. To be considered as significant, the value requires a **bigger fold change to overcome the noise variance**.
+
+### The Volcano plot
+
+> The volcano plot is a plot of the fold change depending on the p-value. The name of this plot originates from its shape. 
+> 
+> The plot aims at **separating differentially expressed genes from the others**. 
+> 
+> 2 thresholds are used: a **p-value threshold** specifying the log fold change that is relevant and significantly different from 0, and the **fold change**.
+
+> **The upper left panel** represents the down-regulated genes with negative fold change.
+> 
+> **The upper right panel** represents up-regulated genes.
+
+![time_0_vs_25_VolcanoPlot.png](deseq2-results%2Ftime_0_vs_25_VolcanoPlot.png)
+
+**The meaning of the colours:**
+
+- **Grey:** Non-significant fold change. Normal genes with no differential expression.
+- **Yellow:** Huge fold change, but non-significant. Genes with high noise between replicates and conditions.
+- **Red:** Significant, but small fold change. Significantly differentially expressed genes, but with only small variation. They are usually not kept due to possibly little biological relevance due to small variations.
+- **Blue:** Huge and significant fold change. Significantly differentially expressed genes with huge variation, which are relevant.
+
+![replicate_1_vs_2_VolcanoPlot.png](deseq2-results%2Freplicate_1_vs_2_VolcanoPlot.png)
+
+In the volcano plot between 2 replicates, no genes are differentially expressed.
+
+### Heatmap
+
+> The heatmap is a plot representing **the counts of significantly differentially expressed genes across the conditions**. 
+> It allows to see if there are different populations of genes among the significant ones.
+
+![time_0_vs_5_heatmap.png](deseq2-results%2Ftime_0_vs_5_heatmap.png)
+
+3 populations:
+
+- Genes down-regulated across time
+- Genes up-regulated across time
+- Genes up-regulated at 5 minutes and down-regulated later.
+
+# What next?
+
+The next aim is to check the relevance and the functions of identified differentially expressed genes in the biological experiments.
+
+To do so, it's possible to perform:
+
+- Gene set enrichment analysis to look for differentially expressed pathways
+- Bibliography research to look if the differentially expressed genes could have been expected
+- Functions research for hypothetical proteins, using folding prediction (Alphafold), search for homology 
+- Mutation of genes in the biological systems (bacteria) to see the impact
+- Comparison with other genomic tracks if some are available
 
     
